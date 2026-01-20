@@ -4,6 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Official portfolio of Anovuyo Mavumengwana - Microsoft Cybersecurity Expert, Software Developer, and M-Tech Founder. Specializing in SOC, Cloud Security, and IT solutions.">
+  <meta name="keywords"
+    content="Anovuyo Mavumengwana, Cybersecurity Expert, Microsoft Sentinel, SOC Analyst, M-Tech, Software Developer South Africa">
+  <meta name="description"
+    content="Official portfolio of Anovuyo Mavumengwana - Microsoft Cybersecurity Expert, Software Developer, and M-Tech Founder. Specializing in SOC, Cloud Security, and IT solutions.">
+  <meta name="keywords"
+    content="Anovuyo Mavumengwana, Cybersecurity Expert, Microsoft Sentinel, SOC Analyst, M-Tech, Software Developer South Africa">
   <title>Anovuyo Mavumengwana | Cybersecurity Expert & IT Specialist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -877,15 +885,16 @@
             </li>
           </ul>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" name="hire-me" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="hire-me" />
           <div class="form-group">
-            <input type="text" placeholder="Full Name" required>
+            <input type="text" name="name" placeholder="Full Name" required>
           </div>
           <div class="form-group">
-            <input type="email" placeholder="Email Address" required>
+            <input type="email" name="email" placeholder="Email Address" required>
           </div>
           <div class="form-group">
-            <textarea rows="5" placeholder="Project details or message..." required></textarea>
+            <textarea name="message" rows="5" placeholder="Project details or message..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
         </form>

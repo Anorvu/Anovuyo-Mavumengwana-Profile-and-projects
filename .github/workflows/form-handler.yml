@@ -1,0 +1,24 @@
+name: Store Form Submissions
+on:
+  repository_dispatch:
+    types: [netlify_form_submission]
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub Issue from Form Data
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const payload = context.payload.client_payload;
+            const name = payload.data.name;
+            const email = payload.data.email;
+            const message = payload.data.message;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `New Hire Me Request from ${name}`,
+              body: `**From:** ${name} (${email})\n\n**Message:**\n${message}`
+            });
