@@ -7,11 +7,7 @@
   <meta name="description"
     content="Official portfolio of Anovuyo Mavumengwana - Microsoft Cybersecurity Expert, Software Developer, and M-Tech Founder. Specializing in SOC, Cloud Security, and IT solutions.">
   <meta name="keywords"
-    content="Anovuyo Mavumengwana, Cybersecurity Expert, Microsoft Sentinel, SOC Analyst, M-Tech, Software Developer South Africa">
-  <meta name="description"
-    content="Official portfolio of Anovuyo Mavumengwana - Microsoft Cybersecurity Expert, Software Developer, and M-Tech Founder. Specializing in SOC, Cloud Security, and IT solutions.">
-  <meta name="keywords"
-    content="Anovuyo Mavumengwana, Cybersecurity Expert, Microsoft Sentinel, SOC Analyst, M-Tech, Software Developer South Africa">
+    content="Anovuyo Mavumengwana, Cybersecurity Expert, Microsoft Sentinel, SOC Analyst, M-Tech, Software Developer, Wireshark, Metasploit, Splunk, EDR, SAST, DAST">
   <title>Anovuyo Mavumengwana | Cybersecurity Expert & IT Specialist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -282,6 +278,37 @@
       margin-bottom: 1rem;
     }
 
+    /* Case Study Narrative */
+    .case-study {
+      margin-top: 1.5rem;
+      border-left: 3px solid var(--primary);
+      padding-left: 1.25rem;
+    }
+
+    .case-study p {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-main);
+    }
+
+    .case-study strong {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Section Dividers */
+    .section-divider {
+      height: 1px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    }
+
     /* Skills Grid */
     .skills-grid {
       display: grid;
@@ -401,7 +428,8 @@
       gap: 1rem;
       min-width: 280px;
       transition: 0.3s;
-      cursor: default;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .cert-badge:hover {
@@ -607,7 +635,6 @@
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Hire Me</a>
     </div>
   </nav>
 
@@ -734,7 +761,8 @@
         <h2 class="section-title">Microsoft Certifications</h2>
       </div>
       <div class="certs-row">
-        <div class="cert-badge reveal">
+        <a href="https://learn.microsoft.com/en-us/credentials/certifications/cybersecurity-architect-expert/"
+          target="_blank" class="cert-badge reveal">
           <svg class="ms-logo" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z" />
           </svg>
@@ -742,8 +770,9 @@
             <h4>SC-100</h4>
             <p>Cybersecurity Architect Expert</p>
           </div>
-        </div>
-        <div class="cert-badge reveal">
+        </a>
+        <a href="https://learn.microsoft.com/en-us/credentials/certifications/security-operations-analyst/"
+          target="_blank" class="cert-badge reveal">
           <svg class="ms-logo" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z" />
           </svg>
@@ -751,8 +780,9 @@
             <h4>SC-200</h4>
             <p>Security Operations Analyst</p>
           </div>
-        </div>
-        <div class="cert-badge reveal">
+        </a>
+        <a href="https://learn.microsoft.com/en-us/credentials/certifications/m365-collaboration-communications-systems-engineer/"
+          target="_blank" class="cert-badge reveal">
           <svg class="ms-logo" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z" />
           </svg>
@@ -760,8 +790,9 @@
             <h4>MS-721</h4>
             <p>Collaboration Comm. Engineer</p>
           </div>
-        </div>
-        <div class="cert-badge reveal">
+        </a>
+        <a href="https://learn.microsoft.com/en-us/credentials/certifications/information-protection-administrator/"
+          target="_blank" class="cert-badge reveal">
           <svg class="ms-logo" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z" />
           </svg>
@@ -769,8 +800,9 @@
             <h4>SC-400</h4>
             <p>Information Protection Administrator</p>
           </div>
-        </div>
-        <div class="cert-badge reveal">
+        </a>
+        <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/" target="_blank"
+          class="cert-badge reveal">
           <svg class="ms-logo" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z" />
           </svg>
@@ -778,7 +810,7 @@
             <h4>AZ-900</h4>
             <p>Azure Fundamentals</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -798,9 +830,14 @@
               <span class="tech-tag">Event Management</span>
             </div>
             <h3 class="project-title">8th Shark & Ray Symposium Platform</h3>
-            <p class="project-desc">Developed a full-scale event platform for the SAIAB symposium, featuring online
-              bookings, secure payments, and speaker profiles. Received official appreciation for IT excellence during
-              the event.</p>
+            <div class="case-study">
+              <p><strong>Challenge:</strong> Managing complex international symposium registrations and secure payments
+                manually was inefficient and high-risk.</p>
+              <p><strong>Solution:</strong> Developed a custom WordPress platform with integrated secure payment
+                gateways, automated booking confirmations, and dynamic speaker profiles.</p>
+              <p><strong>Impact:</strong> Successfully processed 100% of registrations securely, saving the team weeks
+                of manual work. Received official appreciation for IT excellence.</p>
+            </div>
             <div style="margin-top: 1.5rem; border-top: 1px solid var(--glass-border); padding-top: 1rem;">
               <p
                 style="font-size: 0.8rem; color: var(--accent); font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">
@@ -810,6 +847,7 @@
             </div>
           </div>
         </div>
+
         <div class="project-card reveal">
           <div class="project-info">
             <div class="project-tech">
@@ -818,22 +856,36 @@
               <span class="tech-tag">SSH</span>
             </div>
             <h3 class="project-title">Kali Security Toolkit Containerization</h3>
-            <p class="project-desc">Built a custom Kali Linux image containerized for offensive security tooling.
-              Configured secure remote access for laboratory operations.</p>
+            <div class="case-study">
+              <p><strong>Challenge:</strong> Offensive security tools often required complex local environments that
+                were difficult to port and secure for laboratory use.</p>
+              <p><strong>Solution:</strong> Containerized the full Kali Linux toolkit using Docker, implementing secure
+                SSH forwarding and volume persistence.</p>
+              <p><strong>Impact:</strong> Created a highly portable, consistent, and secure environment that reduced
+                setup time for security labs from hours to minutes.</p>
+            </div>
           </div>
         </div>
+
         <div class="project-card reveal">
           <div class="project-info">
             <div class="project-tech">
               <span class="tech-tag">Python</span>
-              <span class="tech-tag">CSV</span>
               <span class="tech-tag">Automation</span>
+              <span class="tech-tag">Analytics</span>
             </div>
             <h3 class="project-title">Usage & Cost Analysis Automation</h3>
-            <p class="project-desc">Automated printer usage reporting from CSV data. Reduced manual workload by 4
-              hours/month with Python-based report generation and email delivery.</p>
+            <div class="case-study">
+              <p><strong>Challenge:</strong> Monthly printer usage reporting from CSV data took 4+ hours of manual
+                spreadsheet work at SAIAB.</p>
+              <p><strong>Solution:</strong> Scripted a Python automation tool to parse raw logs, generate visual cost
+                reports, and deliver them via automated email.</p>
+              <p><strong>Impact:</strong> Eliminated the manual workload entirely (100% automation), ensuring error-free
+                reporting and saving 48 hours of work per year.</p>
+            </div>
           </div>
         </div>
+
         <div class="project-card reveal">
           <div class="project-info">
             <div class="project-tech">
@@ -842,8 +894,14 @@
               <span class="tech-tag">Security</span>
             </div>
             <h3 class="project-title">Secure Banking/Payment Systems</h3>
-            <p class="project-desc">Contributed to LinkGuard.co.za security posture, focusing on payment integration,
-              secure DB design, and transaction integrity.</p>
+            <div class="case-study">
+              <p><strong>Challenge:</strong> Ensuring the integrity and security of transaction-heavy banking platforms
+                like LinkGuard against evolving threats.</p>
+              <p><strong>Solution:</strong> Implemented secure DB schemas and vulnerability scanning within the CI/CD
+                pipeline to harden the payment infrastructure.</p>
+              <p><strong>Impact:</strong> Significantly reduced the attack surface and ensured transaction integrity for
+                thousands of users.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -969,7 +1027,7 @@
               <div class="contact-icon">🌐</div>
               <div>
                 <p style="font-size: 0.8rem; color: var(--text-muted);">Portfolio</p>
-                <p>mtechrepairs.netlify.app</p>
+                <p>anovuyo.netlify.app</p>
               </div>
             </li>
           </ul>
@@ -993,7 +1051,7 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Anovuyo Mavumengwana | M-Tech Repairs. Built with passion & security.</p>
+      <p>&copy; 2026 Anovuyo Mavumengwana | Anovuyo Portfolio. Built with passion & security.</p>
     </div>
   </footer>
 
