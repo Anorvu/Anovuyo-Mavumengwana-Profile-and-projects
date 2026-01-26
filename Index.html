@@ -116,6 +116,16 @@
       font-size: 0.95rem;
     }
 
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
     .nav-link:hover,
     .nav-link.active {
       color: var(--primary);
@@ -619,6 +629,88 @@
 
       .nav-menu {
         display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-dark);
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 1000;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-link {
+        font-size: 1.5rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 6rem;
+      }
+
+      .section {
+        padding: 5rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .contact-container {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+      }
+
+      .typing-text {
+        font-size: 1.2rem;
+      }
+
+      .cta-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-badge {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 1.4rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .timeline-item {
+        padding-left: 2rem;
       }
     }
   </style>
@@ -629,13 +721,16 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="logo">M<span>-Tech</span></a>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </nav>
 
@@ -1152,6 +1247,34 @@
         }
       });
     });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinksList = document.querySelectorAll('.nav-link');
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+
+      // Close menu when a link is clicked
+      navLinksList.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          menuToggle.querySelector('i').classList.remove('fa-times');
+          menuToggle.querySelector('i').classList.add('fa-bars');
+        });
+      });
+    }
 
     // Contact Form AJAX Handling
     const contactForm = document.getElementById('contact-form');
