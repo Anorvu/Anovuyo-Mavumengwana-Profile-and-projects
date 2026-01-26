@@ -1032,7 +1032,7 @@
             </li>
           </ul>
         </div>
-        <form class="contact-form" name="hire-me" method="POST" data-netlify="true">
+        <form class="contact-form" id="contact-form" name="hire-me" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="hire-me" />
           <div class="form-group">
             <input type="text" name="name" placeholder="Full Name" required>
@@ -1124,6 +1124,44 @@
         }
       });
     });
+
+    // Contact Form AJAX Handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerText;
+
+        btn.innerText = 'Sending...';
+        btn.disabled = true;
+
+        const formData = new FormData(form);
+
+        fetch('/', {
+          method: 'POST',
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString()
+        })
+          .then(() => {
+            form.reset();
+            btn.innerText = 'Message Sent!';
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.disabled = false;
+            }, 3000);
+          })
+          .catch((error) => {
+            console.error('Form submission error:', error);
+            btn.innerText = 'Error!';
+            setTimeout(() => {
+              btn.innerText = originalText;
+              btn.disabled = false;
+            }, 3000);
+          });
+      });
+    }
   </script>
 </body>
 
